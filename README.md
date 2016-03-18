@@ -12,3 +12,5 @@ After running this script you can use author\_detection.py. Make sure that you h
 python author\_detection.py ./train ./test
 
 After the program ends we have three result files one for each method; BoW, BoW+Bigram, BoW+Trigram. 
+
+If you want to use only one method, you should comment out the others. For example if you only want to compute the BoW approach, then comment out the methods as explained in the author\_detection.py .
