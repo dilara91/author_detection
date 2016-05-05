@@ -35,11 +35,11 @@ def main(root,mode):
 	author_tokens = [[] for i in range(len(authors_list))]
 	for author_name in authors_list:
 			if mode == 1:
-				author_file = open('.\\tokenized_train\\'+author_name+'.txt', 'r')
+				author_file = open('./tokenized_train/'+author_name+'.txt', 'r')
 			elif mode== 2:
-				author_file = open('.\\bigram_train\\'+author_name+'.txt', 'r')
+				author_file = open('./bigram_train/'+author_name+'.txt', 'r')
 			else:
-				author_file = open('.\\trigram_train\\'+author_name+'.txt', 'r')
+				author_file = open('./trigram_train/'+author_name+'.txt', 'r')
 			a_index = authors_list.index(author_name)
 			
 			for line in author_file:
@@ -49,8 +49,8 @@ def main(root,mode):
 	actual_class = []
 	predicted_class = []
 	if mode == 1:
-		for filename in os.listdir('.\\tokenized_test'):
-			filepath = os.path.join('.\\tokenized_test', filename)
+		for filename in os.listdir('./tokenized_test'):
+			filepath = os.path.join('./tokenized_test', filename)
 			words = []
 			myfile = open(filepath, 'r')
 			for line in myfile:
@@ -67,8 +67,8 @@ def main(root,mode):
 			#every class is measured by the naive bayes and the one with the maximum likelihood
 			#is selected as the predicted class.
 	elif mode == 2:
-		for filename in os.listdir('.\\bigram_test'):
-			filepath = os.path.join('.\\bigram_test', filename)
+		for filename in os.listdir('./bigram_test'):
+			filepath = os.path.join('./bigram_test', filename)
 			words = []
 			myfile = open(filepath, 'r')
 			for line in myfile:
@@ -81,8 +81,8 @@ def main(root,mode):
 				probability[author_name]=likelihood(words,author_name,author_tokens[a_index],class_count,total_class_count,word_count,mode)
 			predicted_class.append(max(probability.iterkeys(), key=(lambda key: probability[key])))	
 	else:
-		for filename in os.listdir('.\\trigram_test'):
-			filepath = os.path.join('.\\trigram_test', filename)
+		for filename in os.listdir('./trigram_test'):
+			filepath = os.path.join('./trigram_test', filename)
 			words = []
 			myfile = open(filepath, 'r')
 			for line in myfile:
