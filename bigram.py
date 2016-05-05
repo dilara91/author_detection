@@ -23,10 +23,10 @@ def bigram():
 	
 	
 			
-	for filename in glob.glob(train+'\\*.txt'):
+	for filename in glob.glob(train+'/*.txt'):
 		text =[]
-		author_name = filename.split('\\')[-1].split('.')[0]
-		author_file = bigram_train+'\\'+author_name+'.txt'
+		author_name = filename.split('/')[-1].split('.')[0]
+		author_file = bigram_train+'/'+author_name+'.txt'
 		thefile = open(author_file, 'w+')
 		myfile = open(filename, 'r')
 		for line in myfile:
@@ -36,10 +36,10 @@ def bigram():
 			thefile.write(text[index]+' '+text[index+1]+'\n')
 		
 	
-	for filename in glob.glob(test+'\\*.txt'):
+	for filename in glob.glob(test+'/*.txt'):
 		test_text = []
-		author_name = filename.split('\\')[-1].split('.')[0]
-		author_file = bigram_test+'\\'+author_name+'.txt'
+		author_name = filename.split('/')[-1].split('.')[0]
+		author_file = bigram_test+'/'+author_name+'.txt'
 		thefile = open(author_file, 'w+')
 		myfile = open(filename, 'r')
 		for line in myfile:
