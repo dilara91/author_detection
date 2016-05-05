@@ -20,8 +20,8 @@ def tokenize(root,author):
 	token = os.path.join('.', 'tokenized_train')
 	if not os.path.exists(token):
 		os.makedirs(token)
-	thefile = open('tokenized_train\\'+author+'.txt', 'w+')
-	for filename in glob.glob(dirname+'\\*.txt'):
+	thefile = open('tokenized_train/'+author+'.txt', 'w+')
+	for filename in glob.glob(dirname+'/*.txt'):
 		file = open(filename, 'r')
 		text = file.read().lower() #lower every letter
 		file.close()
