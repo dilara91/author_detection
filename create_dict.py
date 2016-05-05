@@ -20,7 +20,7 @@ def create_dict(mode):
 		thefile = open('trigram_dictionary.txt', 'w+')
 	
 	text =[]		
-	for filename in glob.glob(dirname+'\\*.txt'):
+	for filename in glob.glob(dirname+'/*.txt'):
 		myfile = open(filename, 'r')
 		for line in myfile:
 			text.append(line.strip())
