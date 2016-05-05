@@ -24,10 +24,10 @@ def trigram():
 	
 	
 			
-	for filename in glob.glob(train+'\\*.txt'):
+	for filename in glob.glob(train+'/*.txt'):
 		text =[]
-		author_name = filename.split('\\')[-1].split('.')[0]
-		author_file = trigram_train+'\\'+author_name+'.txt'
+		author_name = filename.split('/')[-1].split('.')[0]
+		author_file = trigram_train+'/'+author_name+'.txt'
 		thefile = open(author_file, 'w+')
 		myfile = open(filename, 'r')
 		for line in myfile:
@@ -37,10 +37,10 @@ def trigram():
 			thefile.write(text[index]+' '+text[index+1]+' '+text[index+2]+'\n')
 	
 	
-	for filename in glob.glob(test+'\\*.txt'):
+	for filename in glob.glob(test+'/*.txt'):
 		test_text = []
-		author_name = filename.split('\\')[-1].split('.')[0]
-		author_file = trigram_test+'\\'+author_name+'.txt'
+		author_name = filename.split('/')[-1].split('.')[0]
+		author_file = trigram_test+'/'+author_name+'.txt'
 		thefile = open(author_file, 'w+')
 		myfile = open(filename, 'r')
 		for line in myfile:
