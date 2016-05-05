@@ -22,12 +22,12 @@ def tokenize_test(root,author):
 	if not os.path.exists(token):
 		os.makedirs(token)
 	
-	for filename in glob.glob(dirname+'\\*.txt'):
+	for filename in glob.glob(dirname+'/*.txt'):
 		file = open(filename, 'r')
 		text = file.read().lower() #lower every letter
 		file.close()
-		test_filename = filename.split('\\')[-2]+'_'+filename.split('\\')[-1]
-		thefile = open('tokenized_test\\'+test_filename, 'w+') #author names are used for naming files so that it is known.
+		test_filename = filename.split('/')[-2]+'_'+filename.split('/')[-1]
+		thefile = open('tokenized_test/'+test_filename, 'w+') #author names are used for naming files so that it is known.
 		r = re.compile(r'[\W\d_]', re.U) #support Turkish chars. 
 		text = r.sub(" ", text)   #replaces every non alphanumeric char with space.
 		words = list(text.split())   #splits it according to spaces.
