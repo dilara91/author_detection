@@ -25,8 +25,8 @@ def main():
 			train = (len(filenames)*6)/10
 			test = len(filenames) - train
 		
-			author_train = os.path.join(train_dir,dirname.split('\\')[-1])
-			author_test = os.path.join(test_dir,dirname.split('\\')[-1])
+			author_train = os.path.join(train_dir,dirname.split('/')[-1])
+			author_test = os.path.join(test_dir,dirname.split('/')[-1])
 			
 			if not os.path.exists(author_train):
 				os.makedirs(author_train)
